@@ -15,11 +15,12 @@
 
 
 from app.sandbox.modes.base import DispatchResult
-from app.core.commands.securities import get_or_create_security_id
+from app.core.commands.securities import get_or_create_security_id, get_security_id
 
 
 COMMANDS = {
     "get_or_create_security": get_or_create_security_id,
+    "get_security_id": get_security_id
 }
 
 
