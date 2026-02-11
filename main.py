@@ -8,7 +8,7 @@ from app.sandbox.storage import ensure_file_exists
 from app.sandbox.state import AppState
 from app.sandbox.controller import run_app
 
-   
+from app.infrastructure.services.futures import get_active_futures
 
 
 async def main():
@@ -28,7 +28,15 @@ async def main():
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    
+    # asyncio.run(main())
+    
+    df = asyncio.run(get_active_futures())
+    print(df)
+    
+    
+    
+    
     # asyncio.run(console_loop())
     # create_tables()
     # drop_tables()
