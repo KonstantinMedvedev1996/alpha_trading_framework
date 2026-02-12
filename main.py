@@ -9,7 +9,7 @@ from app.sandbox.state import AppState
 from app.sandbox.controller import run_app
 
 from app.infrastructure.services.futures import get_active_futures
-
+from app.domain.assets.futures import get_security, get_securities_df
 
 async def main():
     print("Ready for a wonderful journey")
@@ -31,8 +31,15 @@ if __name__ == "__main__":
     
     # asyncio.run(main())
     
-    df = asyncio.run(get_active_futures())
-    print(df)
+    # df = asyncio.run(get_active_futures())
+    # print(df)
+    
+    # sec = asyncio.run(get_security(name="AAA"))
+    # print(sec)
+    
+    sec = asyncio.run(get_securities_df(platform='moex', security_type='future', status='active'))
+    print(sec)
+    
     
     
     

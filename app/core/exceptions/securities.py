@@ -1,0 +1,7 @@
+
+
+
+
+
+class SecurityNotFoundError(Exception):
+    pass
