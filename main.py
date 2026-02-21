@@ -29,10 +29,10 @@ async def main():
 
 if __name__ == "__main__":
     
-    # asyncio.run(main())
+    asyncio.run(main())
     
-    df = asyncio.run(get_active_futures())
-    print(df)
+    # df = asyncio.run(get_active_futures())
+    # print(df)
     
     # sec = asyncio.run(get_security(name="AAA"))
     # print(sec)
