@@ -9,7 +9,7 @@ from app.sandbox.state import AppState
 from app.sandbox.controller import run_app
 
 from app.infrastructure.services.futures import get_active_futures
-from app.domain.assets.futures import get_security, get_securities_df
+from app.domain.assets.securities import get_security, get_securities_df
 
 async def main():
     print("Ready for a wonderful journey")

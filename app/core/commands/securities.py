@@ -84,7 +84,25 @@ async def get_or_create_security_id(
         await session.flush()   # async flush
         await session.commit() # commit explicitly
 
-        return security.id
+        return security
+
+async def get_security_by_id(security_id: int) -> Security:
+    """
+    Get Security by primary key ID.
+
+    Raises:
+        SecurityNotFoundError: if the security does not exist.
+    """
+
+    async with AsyncSessionLocal() as session:
+        security = await session.get(Security, security_id)
+
+        if not security:
+            raise SecurityNotFoundError(
+                f"Security with id '{security_id}' not found"
+            )
+
+        return security
 
 
 

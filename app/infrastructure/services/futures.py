@@ -6,10 +6,10 @@ from app.providers.moex.futures import save_moex_futures_tickers_pickle_safe
 from app.providers.moex.futures import moex_futures_garbage_collector
 
 
-async def get_active_futures():
-    df = await load_moex_futures_tickers()
-    # apply domain rules here
-    return df
+# async def get_active_futures():
+#     df = await load_moex_futures_tickers()
+#     # apply domain rules here
+#     return df
 
 async def get_active_futures() -> pd.DataFrame:
     """
